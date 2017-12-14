@@ -17,7 +17,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><em>videoPlayer</em> view goes here</div>
+            <div><VideoPlayer video={this.state.video}/></div>
           </div>
           <div className="col-md-5">
             <div><VideoList videos={this.state.videos}/></div>

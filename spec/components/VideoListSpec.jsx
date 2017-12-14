@@ -12,13 +12,13 @@ describe('VideoList', function() {
 
   it('should render one `VideoListEntry` when given one video', function() {
     var shallowRenderer = createRenderer();
-
     var oneFakeVideo = window.fakeVideoData.slice(-1);
     shallowRenderer.render(
       <VideoList videos={oneFakeVideo} />
     );
 
     var videoList = shallowRenderer.getRenderOutput();
+    console.log('videolist', videoList);
     expect(videoList.props.children).to.have.length(1);
     videoList.props.children.forEach(child => expect(child.type).to.equal(VideoListEntry));
   });
@@ -30,7 +30,7 @@ describe('VideoList', function() {
     shallowRenderer.render(
       <VideoList videos={threeFakeVideos} />
     );
-    
+
     var videoList = shallowRenderer.getRenderOutput();
     expect(videoList.props.children).to.have.length(3);
     videoList.props.children.forEach(child => expect(child.type).to.equal(VideoListEntry));
@@ -43,7 +43,7 @@ describe('VideoList', function() {
     shallowRenderer.render(
       <VideoList videos={fiveFakeVideos} />
     );
-    
+
     var videoList = shallowRenderer.getRenderOutput();
     expect(videoList.props.children).to.have.length(5);
     videoList.props.children.forEach(child => expect(child.type).to.equal(VideoListEntry));
